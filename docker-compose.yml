@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  centos:
+    #image: centos/python-38-centos7:latest
+    build:
+      context: ./
+    volumes:
+      - ./pytrec_eval:/src/pytrec_eval
+      - ./scripts:/scripts
+    command:
+      "/scripts/build.sh"
+      #    command: tail -f /dev/null    
+        
